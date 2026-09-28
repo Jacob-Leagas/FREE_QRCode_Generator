@@ -22,3 +22,17 @@ Everything runs locally. The QR library (qrcode-generator v1.4.4, MIT) is embedd
 | PNG | Canvas raster at full intrinsic resolution |
 | JPEG | Same resolution, 92 percent quality |
 | SVG | Vector graphic from the QR library, infinitely scalable |
+
+## Codebase
+
+The entire app is one file:
+
+`index.html` contains three sections, in order:
+
+| Section | What it does |
+| --- | --- |
+| **CSS** (inline styles) | Dark theme, centered layout, responsive sizing, anti-flicker wrapper |
+| **HTML** (body) | Text input, generate button, format dropdown, download button, QR display area |
+| **JS** (inline scripts) | UTF-8 encoder, QR generation via `qrcode-generator` v1.4.4 (MIT, embedded), canvas rendering, PNG/JPEG/SVG export |
+
+The QR library is embedded directly in the script block so the page works fully offline. No CDN, no frameworks, no build tools.
